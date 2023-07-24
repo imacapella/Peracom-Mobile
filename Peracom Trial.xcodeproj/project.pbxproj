@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		617A43532A6E5F6400D23BE6 /* balblabal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 617A43522A6E5F6400D23BE6 /* balblabal.xib */; };
+		617A43552A6EA3E300D23BE6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */; };
+		617A43592A6EAB5400D23BE6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A43582A6EAB5400D23BE6 /* CustomTextField.swift */; };
+		617A435D2A6EACA000D23BE6 /* HomePageWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A435C2A6EACA000D23BE6 /* HomePageWidgets.swift */; };
 		61FABFC22A6A5C1F008BBBD4 /* Peracom_TrialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */; };
 		61FABFC42A6A5C1F008BBBD4 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */; };
 		61FABFC62A6A5C21008BBBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FABFC52A6A5C21008BBBD4 /* Assets.xcassets */; };
 		61FABFC92A6A5C21008BBBD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FABFC82A6A5C21008BBBD4 /* Preview Assets.xcassets */; };
-		61FABFD02A6A7006008BBBD4 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFCF2A6A7006008BBBD4 /* Views.swift */; };
 		61FABFD22A6AA757008BBBD4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFD12A6AA757008BBBD4 /* HomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		617A43522A6E5F6400D23BE6 /* balblabal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = balblabal.xib; sourceTree = "<group>"; };
+		617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		617A43582A6EAB5400D23BE6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		617A435C2A6EACA000D23BE6 /* HomePageWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageWidgets.swift; sourceTree = "<group>"; };
 		61FABFBE2A6A5C1F008BBBD4 /* Peracom Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peracom Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peracom_TrialApp.swift; sourceTree = "<group>"; };
 		61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		61FABFC52A6A5C21008BBBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61FABFC82A6A5C21008BBBD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		61FABFCF2A6A7006008BBBD4 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		61FABFD12A6AA757008BBBD4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,6 +40,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		617A43562A6EAABF00D23BE6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */,
+				61FABFD12A6AA757008BBBD4 /* HomePage.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		617A43572A6EAB4100D23BE6 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				617A435C2A6EACA000D23BE6 /* HomePageWidgets.swift */,
+				617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */,
+				617A43582A6EAB5400D23BE6 /* CustomTextField.swift */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
 		61FABFB52A6A5C1F008BBBD4 = {
 			isa = PBXGroup;
 			children = (
@@ -57,12 +78,10 @@
 		61FABFC02A6A5C1F008BBBD4 /* Peracom Trial */ = {
 			isa = PBXGroup;
 			children = (
-				61FABFD12A6AA757008BBBD4 /* HomePage.swift */,
-				61FABFCF2A6A7006008BBBD4 /* Views.swift */,
-				61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */,
-				61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */,
+				617A43562A6EAABF00D23BE6 /* Screens */,
+				617A43572A6EAB4100D23BE6 /* Customs */,
 				61FABFC52A6A5C21008BBBD4 /* Assets.xcassets */,
-				617A43522A6E5F6400D23BE6 /* balblabal.xib */,
+				61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */,
 				61FABFC72A6A5C21008BBBD4 /* Preview Content */,
 			);
 			path = "Peracom Trial";
@@ -136,7 +155,6 @@
 			files = (
 				61FABFC92A6A5C21008BBBD4 /* Preview Assets.xcassets in Resources */,
 				61FABFC62A6A5C21008BBBD4 /* Assets.xcassets in Resources */,
-				617A43532A6E5F6400D23BE6 /* balblabal.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				61FABFC42A6A5C1F008BBBD4 /* LoginPage.swift in Sources */,
+				617A43552A6EA3E300D23BE6 /* CustomTabBar.swift in Sources */,
+				617A43592A6EAB5400D23BE6 /* CustomTextField.swift in Sources */,
 				61FABFC22A6A5C1F008BBBD4 /* Peracom_TrialApp.swift in Sources */,
-				61FABFD02A6A7006008BBBD4 /* Views.swift in Sources */,
 				61FABFD22A6AA757008BBBD4 /* HomePage.swift in Sources */,
+				617A435D2A6EACA000D23BE6 /* HomePageWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

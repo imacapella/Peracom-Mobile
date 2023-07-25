@@ -11,7 +11,7 @@ import SwiftUI
 struct Peracom_TrialApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            LoginPage()
         }
     }
 }

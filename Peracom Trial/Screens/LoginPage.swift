@@ -9,8 +9,11 @@ import SwiftUI
 
 struct LoginPage: View {
     
-    @State private var textFieldInput : String = ""
-    @State private var textFieldPassword : String = ""
+    @State private var textFieldInput : String = ""  // TEXTFIELD'a girilen değeri tutan değişken
+    @State private var textFieldPassword : String = "" // SecureField'a girilen değeri tutan şifre değişkeni
+    @State private var isShowingFirm: Bool = false // Firma Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
+    @State private var isShowingTerm: Bool = false // Dönem Numarası Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
+    @State private var isOpen : Bool = false // Pickerların açık olmadadığını denetleyen boolean değişkeni
     
     var body: some View {
         
@@ -20,36 +23,72 @@ struct LoginPage: View {
                     .padding(.top,50)
                 Spacer()
                 VStack(spacing: 12) {
-                    CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Username" , cRadius: 6, strokeThickness: 2)
-                    CustomSecureField(secureFieldInput: textFieldInput, secureFieldTitle: "Password", cRadius: 6, strokeThickness: 2)
-                    CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Firm ID" , cRadius: 6, strokeThickness: 2)
-                    CustomTextField(textFieldInput: textFieldPassword, textFieldTitle: "Term Number", cRadius: 6, strokeThickness: 2)
+                    // Username TextField kodları ve Pickeklar açıkken tıklanırsa false döndürerek kapatan kodlar
+                    CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Username" , cRadius: 6, strokeThickness: 2, iconName: "person.fill")
+                        .onTapGesture {
+                            isOpen = false
+                            isShowingFirm = false
+                            isShowingTerm = false
+                        }
+                    // Password TextField kodları ve Pickeklar açıkken tıklanırsa false döndürerek kapatan kodlar
+                    CustomSecureField(secureFieldInput: textFieldInput, secureFieldTitle: "Password", cRadius: 6, strokeThickness: 2, iconName: "lock.fill")
+                        .onTapGesture {
+                            isOpen = false
+                            isShowingFirm = false
+                            isShowingTerm = false
+                        }
+                    // Firma Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
+                    CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Firm ID" , cRadius: 6, strokeThickness: 2, iconName: "house.fill")
+                        .onTapGesture {
+                            if isOpen == false{
+                                isOpen = true
+                                isShowingFirm.toggle()
+                            }
+                        }
+                    // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
+                    if isShowingFirm {
+                        CustomWheelPicker(isShowing: $isShowingFirm, isOpen: $isOpen)
+                        
+                    }
+                    // Dönem Numarası Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
+                    CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Term Number", cRadius: 6, strokeThickness: 2, iconName: "calendar")
+                        .onTapGesture {
+                            if isOpen == false{
+                                isOpen = true
+                                isShowingFirm.toggle()
+                            }
+                        }
+                    // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
+                    if isShowingTerm {
+                        CustomWheelPicker(isShowing: $isShowingTerm, isOpen: $isOpen)
+                        
+                    }
+                    
+                    //SIGN IN BUTONU
+                    Button {
+                        print("do login action")
+                    } label: {
+                        Text("Sign In")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    .frame(height: 52)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.black)
+                    .cornerRadius(6)
+                    .padding()
+                    Spacer()
                 }
-                .padding(.bottom,20)
-                Button {
-                    print("do login action")
-                } label: {
-                    Text("Sign In")
-                        .font(.title2)
-                        .bold()
-                        .foregroundColor(.white)
-                }
-                .frame(height: 52)
-                .frame(maxWidth: .infinity)
-                .background(Color.black)
-                .cornerRadius(6)
                 .padding()
-                Spacer()
+                
             }
-            .padding()
-            
         }
     }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            LoginPage()
-        }
+}
+
+struct LoginPage_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginPage()
     }
-    
 }

@@ -20,6 +20,8 @@ struct HomeWidgets: View {
     
     var body: some View {
         Button(action: action){
+            NavigationLink(destination: Reports()) {
+                                }
             RoundedRectangle(cornerRadius: 11)
                 .frame(width: 90, height: 90)
                 .foregroundStyle(.thinMaterial)
@@ -43,7 +45,7 @@ struct HomeWidgets: View {
 
 struct HomePageWidgets_Previews: PreviewProvider {
     static var previews: some View {
-        HomeWidgets(widgetText: "Report", iconName: "house"){
+        HomeWidgets(widgetText: "Home", iconName: "house.fill"){
             print("preview")
         }
     }

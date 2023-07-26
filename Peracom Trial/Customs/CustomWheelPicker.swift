@@ -24,8 +24,9 @@ struct CustomWheelPicker: View {
                             }
                         }
                         .pickerStyle(.wheel)
+                        .animation(.easeInOut)
                         Button("Done") {
-                            isOpen = true
+                            isOpen = false
                             isShowing = false // "Done" butonuna tıklandığında isShowing'i false yaparak picker'ı kapatın
                         }
                         .padding(.top, 10)

@@ -13,6 +13,9 @@ struct HomePage: View {
             VStack{
                 Image("logo")
                     .padding(.top, 65)
+                    .onTapGesture {
+                        print("calış")
+                    }
                 Spacer()
                 ZStack{
                     VStack{
@@ -48,6 +51,7 @@ struct HomePage: View {
                 Spacer()
                 CustomTabBar(selectedTab: $selectedTab)
             }
+            .edgesIgnoringSafeArea(.all)
     }
 }
 

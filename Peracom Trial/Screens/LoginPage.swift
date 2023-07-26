@@ -11,8 +11,8 @@ struct LoginPage: View {
     
     @State private var textFieldInput : String = ""  // TEXTFIELD'a girilen değeri tutan değişken
     @State private var textFieldPassword : String = "" // SecureField'a girilen değeri tutan şifre değişkeni
-    @State private var isShowingFirm: Bool = false // Firma Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
-    @State private var isShowingTerm: Bool = false // Dönem Numarası Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
+    @State private var isShowingFirmPicker: Bool = false // Firma Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
+    @State private var isShowingTermPicker: Bool = false // Dönem Numarası Picker'ını gösterip göstermeyeceğini anlayan boolean değişkeni
     @State private var isOpen : Bool = false // Pickerların açık olmadadığını denetleyen boolean değişkeni
     
     var body: some View {
@@ -27,41 +27,39 @@ struct LoginPage: View {
                     CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Username" , cRadius: 6, strokeThickness: 2, iconName: "person.fill")
                         .onTapGesture {
                             isOpen = false
-                            isShowingFirm = false
-                            isShowingTerm = false
+                            isShowingFirmPicker = false
+                            isShowingTermPicker = false
                         }
                     // Password TextField kodları ve Pickeklar açıkken tıklanırsa false döndürerek kapatan kodlar
                     CustomSecureField(secureFieldInput: textFieldInput, secureFieldTitle: "Password", cRadius: 6, strokeThickness: 2, iconName: "lock.fill")
                         .onTapGesture {
                             isOpen = false
-                            isShowingFirm = false
-                            isShowingTerm = false
+                            isShowingFirmPicker = false
+                            isShowingTermPicker = false
                         }
                     // Firma Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
                     CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Firm ID" , cRadius: 6, strokeThickness: 2, iconName: "house.fill")
                         .onTapGesture {
                             if isOpen == false{
                                 isOpen = true
-                                isShowingFirm.toggle()
+                                isShowingFirmPicker.toggle()
                             }
                         }
                     // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
-                    if isShowingFirm {
-                        CustomWheelPicker(isShowing: $isShowingFirm, isOpen: $isOpen)
-                        
+                    if isShowingFirmPicker {
+                        CustomWheelPicker(isShowing: $isShowingFirmPicker, isOpen: $isOpen)
                     }
                     // Dönem Numarası Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
                     CustomTextField(textFieldInput: textFieldInput, textFieldTitle: "Term Number", cRadius: 6, strokeThickness: 2, iconName: "calendar")
                         .onTapGesture {
                             if isOpen == false{
                                 isOpen = true
-                                isShowingFirm.toggle()
+                                isShowingTermPicker.toggle()
                             }
                         }
                     // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
-                    if isShowingTerm {
-                        CustomWheelPicker(isShowing: $isShowingTerm, isOpen: $isOpen)
-                        
+                    if isShowingTermPicker {
+                        CustomWheelPicker(isShowing: $isShowingTermPicker, isOpen: $isOpen)
                     }
                     
                     //SIGN IN BUTONU

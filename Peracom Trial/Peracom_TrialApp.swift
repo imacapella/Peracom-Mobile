@@ -12,6 +12,8 @@ struct Peracom_TrialApp: App {
     var body: some Scene {
         WindowGroup {
             LoginPage()
+            HomePage()
+               
         }
     }
 }

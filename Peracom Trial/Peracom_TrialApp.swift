@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct Peracom_TrialApp: App {
+    @State var loginPageTrigger = true
+    @State var homePageTrigger = false
     var body: some Scene {
         WindowGroup {
-            LoginPage()
             HomePage()
-               
         }
     }
 }

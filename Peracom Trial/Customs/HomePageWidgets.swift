@@ -7,21 +7,15 @@
 
 import SwiftUI
 
-struct HomeWidgets: View {
+struct HomeWidgets<TargetView: View>: View {
     var  widgetText : String = ""
     var  iconName : String = ""
     var action: () -> Void
+    var nextView : TargetView
     
-    init(widgetText: String, iconName: String, action: @escaping () -> Void) {
-            self.widgetText = widgetText
-            self.iconName = iconName
-            self.action = action
-        }
     
     var body: some View {
-        Button(action: action){
-            NavigationLink(destination: Reports()) {
-                                }
+        Button(action: action) {
             RoundedRectangle(cornerRadius: 11)
                 .frame(width: 90, height: 90)
                 .foregroundStyle(.thinMaterial)
@@ -34,19 +28,21 @@ struct HomeWidgets: View {
                             .frame(width: 35, height: 35)
                             .foregroundColor(Color.black)
                         Text(widgetText)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.black)
                     }
                 )
-                .buttonStyle(PlainButtonStyle())
         }
+        .buttonStyle(PlainButtonStyle())
+        .overlay(
+            // Add a transparent background to the entire button to capture the tap gesture.
+             NavigationLink(destination: nextView){
+                Color.clear
+            }
+        )
     }
 }
 
 struct HomePageWidgets_Previews: PreviewProvider {
     static var previews: some View {
-        HomeWidgets(widgetText: "Home", iconName: "house.fill"){
-            print("preview")
-        }
+        HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("bla")}, nextView: Reports())
     }
 }

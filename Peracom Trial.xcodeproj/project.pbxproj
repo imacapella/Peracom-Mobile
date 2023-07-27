@@ -12,6 +12,8 @@
 		617A43552A6EA3E300D23BE6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */; };
 		617A43592A6EAB5400D23BE6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A43582A6EAB5400D23BE6 /* CustomTextField.swift */; };
 		617A435D2A6EACA000D23BE6 /* HomePageWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A435C2A6EACA000D23BE6 /* HomePageWidgets.swift */; };
+		61965A792A726A1C002F47A9 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61965A782A726A1C002F47A9 /* Graphics.swift */; };
+		61965A7C2A72915F002F47A9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61965A7B2A72915F002F47A9 /* Settings.swift */; };
 		61CC2B502A6FEB810092764C /* CustomWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CC2B4F2A6FEB810092764C /* CustomWheelPicker.swift */; };
 		61FABFC22A6A5C1F008BBBD4 /* Peracom_TrialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */; };
 		61FABFC42A6A5C1F008BBBD4 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */; };
@@ -26,6 +28,8 @@
 		617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		617A43582A6EAB5400D23BE6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		617A435C2A6EACA000D23BE6 /* HomePageWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageWidgets.swift; sourceTree = "<group>"; };
+		61965A782A726A1C002F47A9 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
+		61965A7B2A72915F002F47A9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		61CC2B4F2A6FEB810092764C /* CustomWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWheelPicker.swift; sourceTree = "<group>"; };
 		61FABFBE2A6A5C1F008BBBD4 /* Peracom Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peracom Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61FABFC12A6A5C1F008BBBD4 /* Peracom_TrialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peracom_TrialApp.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 				61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */,
 				61FABFD12A6AA757008BBBD4 /* HomePage.swift */,
 				61783FFF2A70FC830008E8B9 /* Reports.swift */,
+				61965A782A726A1C002F47A9 /* Graphics.swift */,
+				61965A7B2A72915F002F47A9 /* Settings.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -180,8 +186,10 @@
 				617A43552A6EA3E300D23BE6 /* CustomTabBar.swift in Sources */,
 				617A43592A6EAB5400D23BE6 /* CustomTextField.swift in Sources */,
 				61FABFC22A6A5C1F008BBBD4 /* Peracom_TrialApp.swift in Sources */,
+				61965A792A726A1C002F47A9 /* Graphics.swift in Sources */,
 				61FABFD22A6AA757008BBBD4 /* HomePage.swift in Sources */,
 				617A435D2A6EACA000D23BE6 /* HomePageWidgets.swift in Sources */,
+				61965A7C2A72915F002F47A9 /* Settings.swift in Sources */,
 				617840002A70FC830008E8B9 /* Reports.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

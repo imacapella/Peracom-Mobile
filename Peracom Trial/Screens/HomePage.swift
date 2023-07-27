@@ -10,53 +10,46 @@ import SwiftUI
 struct HomePage: View {
     @State private var selectedTab : Tab = .house
     var body: some View{
+        NavigationView{
+            
             VStack{
                 Image("logo")
-                    .padding(.top, 65)
+                    .padding(.top, 110)
                     .onTapGesture {
                         print("calış")
                     }
                 Spacer()
                 ZStack{
                     VStack{
+                        
                         HStack(spacing: 40){
-                            HomeWidgets(widgetText: "Report", iconName: "newspaper") {
-                                print("sleam")
-                            }
-                            .padding()
-                            HomeWidgets(widgetText: "Print", iconName: "printer") {
-                                print("sleam")
-                            }
+                            HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("Reports View Geldi") }, nextView: Reports())
+                                .padding()
+                            HomeWidgets(widgetText: "Graphics",iconName: "chart.xyaxis.line", action: {print("Graphics View Geldi") }, nextView: Graphics())
                         }
                         HStack(spacing: 40){
-                            HomeWidgets(widgetText: "Graphics", iconName: "chart.xyaxis.line") {
-                                print("sleam")
-                            }
-                            .padding()
-                            HomeWidgets(widgetText: "Tasks", iconName: "list.clipboard") {
-                                print("sleam")
-                            }
+                            HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("print") }, nextView: Reports())
+                                .padding()
+                            HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("print") }, nextView: Reports())
                         }
                         HStack(spacing: 40){
-                            HomeWidgets(widgetText: "Profile", iconName: "person.crop.circle") {
-                                print("sleam")
-                            }
-                            .padding()
-                            HomeWidgets(widgetText: "help", iconName: "questionmark.circle") {
-                                print("sleam")
-                            }
+                            HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("print") }, nextView: Reports())
+                                .padding()
+                            HomeWidgets(widgetText: "Reports",iconName: "newspaper", action: {print("print") }, nextView: Reports())
                         }
                     } .padding(.trailing, 20)
                 }
+                
                 Spacer()
                 CustomTabBar(selectedTab: $selectedTab)
+                    .edgesIgnoringSafeArea(.all)
             }
-            .edgesIgnoringSafeArea(.all)
+        }
     }
-}
-
-struct HomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePage()
+    
+    struct HomePage_Previews: PreviewProvider {
+        static var previews: some View {
+            HomePage()
+        }
     }
 }

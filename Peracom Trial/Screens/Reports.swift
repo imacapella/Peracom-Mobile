@@ -13,7 +13,7 @@ struct Reports: View {
         ZStack{
             VStack{
                 Image("logo")
-                    .padding(.top, 65)
+                    .padding(.top, 110)
                 Spacer()
                 RoundedRectangle(cornerRadius: 25)
                     .padding()

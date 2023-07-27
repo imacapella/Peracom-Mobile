@@ -65,6 +65,7 @@ struct LoginPage: View {
                     //SIGN IN BUTONU
                     Button {
                         print("do login action")
+                        Peracom_TrialApp(loginPageTrigger: true)
                     } label: {
                         Text("Sign In")
                             .font(.title2)

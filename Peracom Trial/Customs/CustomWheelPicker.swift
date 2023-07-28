@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CustomWheelPicker: View {
-    @State private var selection = ""
+    @Binding var selection : String
     @Binding var isShowing : Bool
     @Binding var isOpen : Bool
-        let colors = ["Red", "Green", "Blue", "Black", "Tartan"]
+    let items : [String]
 
         var body: some View {
             if isShowing {
@@ -19,7 +19,7 @@ struct CustomWheelPicker: View {
                     Spacer()
                     VStack {
                         Picker("Select a paint color", selection: $selection) {
-                            ForEach(colors, id: \.self) {
+                            ForEach(items, id: \.self) {
                                 Text($0)
                             }
                         }
@@ -29,6 +29,7 @@ struct CustomWheelPicker: View {
                             isOpen = false
                             isShowing = false // "Done" butonuna tıklandığında isShowing'i false yaparak picker'ı kapatın
                         }
+                        
                         .padding(.top, 10)
                     }.background(RoundedRectangle(cornerRadius: 10)
                         .edgesIgnoringSafeArea(.all)
@@ -41,8 +42,8 @@ struct CustomWheelPicker: View {
         }
 }
 
-struct CustomWheelPicker_Previews: PreviewProvider {
+/*struct CustomWheelPicker_Previews: PreviewProvider {
     static var previews: some View {
-        CustomWheelPicker(isShowing: .constant(true), isOpen: .constant(true))
+        CustomWheelPicker(selection: ,isShowing: .constant(true), isOpen: .constant(true))
     }
-}
+}*/

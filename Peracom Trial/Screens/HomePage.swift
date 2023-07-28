@@ -14,7 +14,7 @@ struct HomePage: View {
             
             VStack{
                 Image("logo")
-                    .padding(.top, 110)
+                    .padding(.top, 57)
                     .onTapGesture {
                         print("calış")
                     }
@@ -41,10 +41,9 @@ struct HomePage: View {
                 }
                 
                 Spacer()
-                CustomTabBar(selectedTab: $selectedTab)
-                    .edgesIgnoringSafeArea(.all)
+                    
             }
-        }
+        }.edgesIgnoringSafeArea(.all)
     }
     
     struct HomePage_Previews: PreviewProvider {

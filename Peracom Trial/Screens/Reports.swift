@@ -26,11 +26,10 @@ struct Reports: View {
                             Divider().frame(width: 355)
                             CustomLastReports()
                                 .padding()
-                            CustomLastReports()
-                                .padding()
                             Divider().frame(width: 355)
                             CustomLastReports()
                                 .padding()
+                            Divider().frame(width: 355)
                             CustomLastReports()
                                 .padding()
                             Divider().frame(width: 355)
@@ -40,7 +39,6 @@ struct Reports: View {
                     }
                 Spacer()
                 newReport()
-                CustomTabBar(selectedTab: $selectedTab)
             }
         }
         .edgesIgnoringSafeArea(.all)

@@ -9,11 +9,20 @@ import SwiftUI
 
 @main
 struct Peracom_TrialApp: App {
-    @State var loginPageTrigger = true
-    @State var homePageTrigger = false
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            TabView {
+                LoginPage()
+                
+                    HomePage()
+                        .tabItem {
+                            HStack{
+                                Text("Home")
+                                Image(systemName: "house.fill")
+                            }
+                    }
+                }
+            }
         }
-    }
-}
+
+            }

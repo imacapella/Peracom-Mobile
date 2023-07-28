@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State public var textFieldInput : String = ""
+    @Binding public var textFieldInput : String
     @State public var textFieldTitle : String = ""
     @State public var cRadius : CGFloat
     @State public var strokeThickness : CGFloat
@@ -17,7 +17,7 @@ struct CustomTextField: View {
         ZStack(alignment: .leading) {
                    RoundedRectangle(cornerRadius: cRadius)
                        .strokeBorder(Color.black, lineWidth: strokeThickness)
-                       .frame(width: .infinity, height: 50)
+                       .frame(width: .infinity, height: 45)
 
                    HStack {
                        Image(systemName: iconName)
@@ -26,6 +26,7 @@ struct CustomTextField: View {
 
                        TextField(textFieldTitle, text: $textFieldInput)
                            .padding(.trailing, 12) // Metni sağa doğru boşluk ekleyin
+                           .textInputAutocapitalization(.never)
                    }
                }
                .padding(.horizontal, 25)
@@ -33,22 +34,13 @@ struct CustomTextField: View {
 }
 
 struct CustomSecureField: View {
-    @State public var secureFieldInput : String = ""
+    @Binding public var secureFieldInput : String
     @State public var secureFieldTitle : String = ""
     @State private var clearBool : Bool?
     @State public var cRadius : CGFloat
     @State public var strokeThickness : CGFloat
     var iconName : String = ""
     
-    func textFieldControl() -> Bool {
-        if (secureFieldInput != ""){
-            clearBool = true
-        }
-        else {
-            clearBool = false
-        }
-        return clearBool!
-    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -63,17 +55,13 @@ struct CustomSecureField: View {
 
                        SecureField("Password", text: $secureFieldInput)
                            .padding(.trailing, 12) // Metni sağa doğru boşluk ekleyin
-                   }
+                       .textInputAutocapitalization(.never)                   }
                }
                .padding(.horizontal, 25)
-            .onTapGesture {
-                textFieldControl()
-                clearBool == true ? secureFieldInput = "" : print("false geldi")
-            }
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
+/* struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             CustomSecureField(secureFieldInput: "bla", secureFieldTitle: "bla", cRadius: 10, strokeThickness: 1)
@@ -83,4 +71,4 @@ struct CustomTextField_Previews: PreviewProvider {
             //CustomWheelPicker()
         }
     }
-}
+} */

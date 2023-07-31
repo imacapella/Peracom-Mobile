@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct newReport: View {
+    var text : String = ""
     var body: some View {
         ZStack{
             Button {
@@ -17,7 +18,7 @@ struct newReport: View {
                     Image(systemName: "plus")
                         .font(.system(size: 23))
                         .foregroundColor(.black)
-                    Text("New Report")
+                    Text(text)
                         .font(.title2)
                         .bold()
                     .foregroundColor(.black)

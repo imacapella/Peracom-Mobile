@@ -12,17 +12,23 @@ struct Peracom_TrialApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                LoginPage()
-                
-                    HomePage()
-                        .tabItem {
-                            HStack{
-                                Text("Home")
-                                Image(systemName: "house.fill")
-                            }
+                HomePage()
+                    .tabItem {
+                        HStack{
+                            Text("Home")
+                            Image(systemName: "house.fill")
+                        }
                     }
-                }
+                Settings()
+                    .tabItem{
+                        HStack{
+                            Text("Settings")
+                            Image(systemName: "gearshape.fill")
+                        }
+                    }
             }
         }
+    }
+    
+}
 
-            }

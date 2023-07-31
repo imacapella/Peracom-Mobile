@@ -23,11 +23,19 @@ struct LoginPage: View {
     
     var body: some View {
         
-        VStack() {
+        NavigationView{
             VStack(spacing: 20) {
                 Image("logo")
                     .padding(.top,50)
                 Spacer()
+                NavigationLink(
+                    destination: HomePage(),
+                    isActive: $shouldNavigateToHome,
+                    label: {
+                        EmptyView()
+                    }
+                    
+                ).hidden()
                 VStack(spacing: 12) {
                     // Username TextField kodları ve Pickeklar açıkken tıklanırsa false döndürerek kapatan kodlar
                     CustomTextField(textFieldInput: $userFieldInput, textFieldTitle: "Username" , cRadius: 6, strokeThickness: 2, iconName: "person.fill")
@@ -47,9 +55,9 @@ struct LoginPage: View {
                     // Firma Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
                     CustomTextField(textFieldInput: $firmFieldInput, textFieldTitle: "Firm ID" , cRadius: 6, strokeThickness: 2, iconName: "house.fill")
                         .onTapGesture {
-                            if isOpen == false{
-                                isOpen = true
+                            if isShowingFirmPicker == false{
                                 isShowingFirmPicker.toggle()
+                                isShowingTermPicker = false
                             }
                         }
                     // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
@@ -58,29 +66,28 @@ struct LoginPage: View {
                     // Dönem Numarası Picker'ı, basıldığında eğer isOpen false ise CustomWheelPicker çalışır ve sonrasında isOpen değişkenini open yapar. Bunun haricinde Firmaları gösterip göstermeyeceğini anlamak için tıklanması gerekiyor bu yüzden toogle da oluyor.
                     CustomTextField(textFieldInput: $termFieldInput, textFieldTitle: "Term Number", cRadius: 6, strokeThickness: 2, iconName: "calendar")
                         .onTapGesture {
-                            if isOpen == false{
-                                isOpen = true
-                                isShowingFirmPicker.toggle()
+                            if isShowingTermPicker == false{
+                                isShowingTermPicker.toggle()
+                                isShowingFirmPicker = false
                             }
                         }
 //-------------------PICKERS-------------------------------------------------------------------------------------------------
                     // Eğer uygun toogle değeri gelirse CustomWheelPicker'ı açıyor.
                     if isShowingFirmPicker {
-                        CustomWheelPicker(selection: $firmFieldInput, isShowing: $isShowingFirmPicker, isOpen: $isOpen, items: firms)
+                        CustomFirmWheelPicker(selectionFirm: $firmFieldInput, isShowing: $isShowingFirmPicker, isOpen: $isOpen, items: firms)
                     }
                     if isShowingTermPicker {
-                        CustomWheelPicker(selection: $termFieldInput, isShowing: $isShowingTermPicker, isOpen: $isOpen, items: terms)
+                        CustomTermWheelPicker(selectionTerm: $termFieldInput, isShowing: $isShowingTermPicker, isOpen: $isOpen, items: terms)
                     }
                     
 //-------------------SIGN IN-------------------------------------------------------------------------------------------------
+                    
                     Button {
                         print(userFieldInput + " " + secureFieldInput)
                         //--------- KONTROL VE DİĞER SAYFAYA AKTAR MEKANİZMASI--------------
                         if LoginControl(userAnswer: userFieldInput, passwordAnswer: secureFieldInput){
                             shouldNavigateToHome = true
                         }
-                        else{false}
-                        print("Login Successfull")
                         
                     } label: {
                         Text("Sign In")

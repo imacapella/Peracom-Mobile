@@ -20,6 +20,7 @@
 		61FABFC62A6A5C21008BBBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FABFC52A6A5C21008BBBD4 /* Assets.xcassets */; };
 		61FABFC92A6A5C21008BBBD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FABFC82A6A5C21008BBBD4 /* Preview Assets.xcassets */; };
 		61FABFD22A6AA757008BBBD4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FABFD12A6AA757008BBBD4 /* HomePage.swift */; };
+		61FD2E562A77FBA4009EF936 /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FD2E552A77FBA4009EF936 /* ReportDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		61FABFC52A6A5C21008BBBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61FABFC82A6A5C21008BBBD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		61FABFD12A6AA757008BBBD4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		61FD2E552A77FBA4009EF936 /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				61FABFC32A6A5C1F008BBBD4 /* LoginPage.swift */,
 				61FABFD12A6AA757008BBBD4 /* HomePage.swift */,
+				61FD2E552A77FBA4009EF936 /* ReportDetailView.swift */,
 				61783FFF2A70FC830008E8B9 /* Reports.swift */,
 				61965A782A726A1C002F47A9 /* Graphics.swift */,
 				61965A7B2A72915F002F47A9 /* Settings.swift */,
@@ -187,6 +190,7 @@
 				617A43592A6EAB5400D23BE6 /* CustomTextField.swift in Sources */,
 				61FABFC22A6A5C1F008BBBD4 /* Peracom_TrialApp.swift in Sources */,
 				61965A792A726A1C002F47A9 /* Graphics.swift in Sources */,
+				61FD2E562A77FBA4009EF936 /* ReportDetailView.swift in Sources */,
 				61FABFD22A6AA757008BBBD4 /* HomePage.swift in Sources */,
 				617A435D2A6EACA000D23BE6 /* HomePageWidgets.swift in Sources */,
 				61965A7C2A72915F002F47A9 /* Settings.swift in Sources */,

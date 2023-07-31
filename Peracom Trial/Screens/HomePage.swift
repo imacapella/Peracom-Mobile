@@ -14,7 +14,7 @@ struct HomePage: View {
             
             VStack{
                 Image("logo")
-                    .padding(.top, 57)
+                    .padding(.top, 50)
                     .onTapGesture {
                         print("calış")
                     }

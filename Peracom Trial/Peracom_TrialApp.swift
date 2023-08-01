@@ -19,6 +19,7 @@ struct Peracom_TrialApp: App {
                             Image(systemName: "house.fill")
                         }
                     }
+                    .preferredColorScheme(.light)
                 Settings()
                     .tabItem{
                         HStack{
@@ -26,6 +27,7 @@ struct Peracom_TrialApp: App {
                             Image(systemName: "gearshape.fill")
                         }
                     }
+                    .preferredColorScheme(.light)
             }
         }
     }

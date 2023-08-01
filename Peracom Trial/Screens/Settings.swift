@@ -7,9 +7,50 @@
 
 import SwiftUI
 
-struct Settings: View {
+struct ToogleButton: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Sign in with Google")
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.red)
+            .cornerRadius(8)
+            .shadow(radius: 3)
+    }
+}
+
+struct Settings: View {
+    @Environment(\.colorScheme) var colorScheme
+    @State private var isDarkMode = false
+
+    var body: some View {
+        ZStack {
+            // Aydınlık arkaplan
+            Color.white.edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                ToogleButton()
+                    .padding()
+                
+                // Diğer içerikler burada eklenebilir
+                
+                Toggle("Dark Mode", isOn: $isDarkMode)
+                    .padding()
+                    .onChange(of: isDarkMode, perform: { value in
+                        toggleDarkMode()
+                    })
+            }
+        }
+        .preferredColorScheme(isDarkMode ? .dark : .light) // Dark mode veya light mode seçeneğine göre ayarla
+    }
+
+    private func toggleDarkMode() {
+        UIApplication.shared.windows.forEach { window in
+            if isDarkMode {
+                window.overrideUserInterfaceStyle = .dark
+            } else {
+                window.overrideUserInterfaceStyle = .light
+            }
+        }
     }
 }
 

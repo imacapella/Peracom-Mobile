@@ -10,10 +10,11 @@ import SwiftUI
 struct data : Identifiable {
     let id = UUID()
     let categoryName : String
+    let categoryIcon : String
 }
 
 struct categories {
-    static let categoriesArray = [data(categoryName: "Cari"), data(categoryName: "Alış"), data(categoryName: "Satış")]
+    static let categoriesArray = [data(categoryName: "Cari", categoryIcon: "person.fill"), data(categoryName: "Alış", categoryIcon: "cart.fill.badge.plus"), data(categoryName: "Satış", categoryIcon: "creditcard.fill")]
 }
 
 struct Reports: View {
@@ -31,9 +32,9 @@ struct Reports: View {
                     .padding()
                 
                 List(cards, id: \.id){ card in
-                    NavigationLink(destination: ReportDetailView(), label: {
+                    NavigationLink(destination: ReportDetailView(category: card.categoryName), label: {
                         HStack{
-                            Image(systemName: listIconName)
+                            Image(systemName: card.categoryIcon)
                             Text(card.categoryName)
                         }
                     })

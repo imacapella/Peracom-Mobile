@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61323E382A792C8400C83F83 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 61323E372A792C8400C83F83 /* SwiftUICharts */; };
 		617840002A70FC830008E8B9 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783FFF2A70FC830008E8B9 /* Reports.swift */; };
 		617840022A71015D0008E8B9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617840012A71015D0008E8B9 /* Buttons.swift */; };
 		617A43552A6EA3E300D23BE6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A43542A6EA3E300D23BE6 /* CustomTabBar.swift */; };
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61323E382A792C8400C83F83 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +131,9 @@
 			dependencies = (
 			);
 			name = "Peracom Trial";
+			packageProductDependencies = (
+				61323E372A792C8400C83F83 /* SwiftUICharts */,
+			);
 			productName = "Peracom Trial";
 			productReference = 61FABFBE2A6A5C1F008BBBD4 /* Peracom Trial.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 61FABFB52A6A5C1F008BBBD4;
+			packageReferences = (
+				61323E362A792C8400C83F83 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 61FABFBF2A6A5C1F008BBBD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -395,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61323E362A792C8400C83F83 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61323E372A792C8400C83F83 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61323E362A792C8400C83F83 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61FABFB62A6A5C1F008BBBD4 /* Project object */;
 }

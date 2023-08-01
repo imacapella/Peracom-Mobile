@@ -39,9 +39,10 @@ struct ReportDetailView: View {
 
     var body: some View {
         VStack {
-            Text("Selected Category: \(category)")
-                .font(.title)
-                .padding()
+                Text(category)
+                    .font(.largeTitle)
+                    .padding()
+                    .bold()
             
             // Use the selected category to retrieve the subcategories from the dictionary
             if subCards.isEmpty {
@@ -57,12 +58,11 @@ struct ReportDetailView: View {
             
             Spacer()
         }
-        .navigationTitle("Subcategories")
     }
 }
 
 struct ReportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailView(category: "Blabla")
+        ReportDetailView(category: "Cari")
     }
 }

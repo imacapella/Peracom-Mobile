@@ -41,7 +41,6 @@ struct HomePage: View {
                 }
                 
                 Spacer()
-                    
             }
         }.edgesIgnoringSafeArea(.all)
     }

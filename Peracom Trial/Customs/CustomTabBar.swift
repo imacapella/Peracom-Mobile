@@ -8,58 +8,51 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable {
+    case none
     case person
     case house
     case gearshape
 }
 
 struct CustomTabBar: View {
-    
-    @Binding var selectedTab :  Tab
-    private var fillImage : String{
+    @Binding var selectedTab: Tab
+    private var fillImage: String {
         selectedTab.rawValue + ".fill"
     }
-    
+
+    // Tab bar'da göstermek istediğiniz tabları belirtin
+    public var visibleTabs: [Tab] = [.person, .house, .gearshape]
+
     var body: some View {
-            VStack{
-                HStack{
-                    ForEach(Tab.allCases, id: \.rawValue) { tab in
-                        Spacer()
-                        Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
-                            .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                            .foregroundColor(.black)
-                            .font(.system(size: 22))
-                            .onTapGesture{
-                                withAnimation(.easeIn(duration: 0.1)){
-                                    selectedTab = tab
-                                }
-                                switch selectedTab {
-                                case .person:
-                                    print("LoginPage")
-                                    LoginPage()
-                                    break
-                                case .house:
-                                    print("HomePage")
-                                    HomePage()
-                                    break
-                                case .gearshape:
-                                    print("Settings")
-                                    break
-                                }
+        VStack {
+            HStack {
+                ForEach(visibleTabs, id: \.rawValue) { tab in
+                    Spacer()
+                    Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
+                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
+                        .foregroundColor(.black)
+                        .font(.system(size: 22))
+                        .onTapGesture {
+                            withAnimation(.easeIn(duration: 0.1)) {
+                                selectedTab = tab
                             }
-                        Spacer()
-                    }
+                        }
+                    Spacer()
                 }
-                .frame(width: nil, height: 60)
-                .background(.thinMaterial)
-                .cornerRadius(20)
-                .padding()
             }
+            .frame(height: 60)
+            .background(.thinMaterial)
+            .cornerRadius(20)
+            .padding()
+        }
+        .edgesIgnoringSafeArea(.all)
     }
+}
+
+
     
     struct CustomTabBar_Previews: PreviewProvider {
         static var previews: some View {
             CustomTabBar(selectedTab: .constant(.house))
         }
     }
-}

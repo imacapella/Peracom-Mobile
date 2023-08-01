@@ -9,28 +9,29 @@ import SwiftUI
 
 @main
 struct Peracom_TrialApp: App {
+    @State private var selectedTab: Tab = .none
+    
     var body: some Scene {
         WindowGroup {
-            TabView {
+            TabView(selection: $selectedTab) { // TabView'ı selectedTab değişkeniyle bağlayın
+                LoginPage()
+                Graphics()
+                    .tag(Tab.person)
                 HomePage()
-                    .tabItem {
-                        HStack{
-                            Text("Home")
-                            Image(systemName: "house.fill")
-                        }
-                    }
-                    .preferredColorScheme(.light)
+                    .tag(Tab.house) // Her sayfaya bir tag değeri verin
                 Settings()
-                    .tabItem{
-                        HStack{
-                            Text("Settings")
-                            Image(systemName: "gearshape.fill")
-                        }
-                    }
-                    .preferredColorScheme(.light)
+                    .tag(Tab.gearshape)
             }
+             // TabView stilini düzenleyin
+            .overlay(
+                CustomTabBar(selectedTab: $selectedTab) // CustomTabBar'ı overlay olarak ekleyin ve selectedTab değişkenini bağlayın
+                    .frame(height: 80)
+                    .padding(.bottom, 20),
+                alignment: .bottom
+            ).edgesIgnoringSafeArea(.all)
+            }
+            
         }
     }
-    
-}
+
 

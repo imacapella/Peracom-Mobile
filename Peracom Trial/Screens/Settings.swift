@@ -28,11 +28,6 @@ struct Settings: View {
             Color.white.edgesIgnoringSafeArea(.all)
             
             VStack {
-                ToogleButton()
-                    .padding()
-                
-                // Diğer içerikler burada eklenebilir
-                
                 Toggle("Dark Mode", isOn: $isDarkMode)
                     .padding()
                     .onChange(of: isDarkMode, perform: { value in

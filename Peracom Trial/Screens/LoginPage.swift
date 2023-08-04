@@ -21,6 +21,7 @@ struct LoginPage: View {
     @State private var shouldNavigateToHome = false
     @Binding var shouldShowTabBar: Bool
     @Binding var selectedTab: Tab
+    @State private var isEditing: Bool = false
 
     // CustomTabBar'ı burada tanımlayın
     var customTabBar: some View {
@@ -65,6 +66,8 @@ struct LoginPage: View {
                                 isShowingTermPicker = false
                             }
                         }
+                        .textFieldStyle(PlainTextFieldStyle())
+                        
 
                     CustomTextField(textFieldInput: $termFieldInput, textFieldTitle: "Term Number", cRadius: 6, strokeThickness: 2, iconName: "calendar")
                         .onTapGesture {
@@ -73,6 +76,7 @@ struct LoginPage: View {
                                 isShowingFirmPicker = false
                             }
                         }
+                        .textFieldStyle(PlainTextFieldStyle())
 
                     if isShowingFirmPicker {
                         CustomFirmWheelPicker(selectionFirm: $firmFieldInput, isShowing: $isShowingFirmPicker, isOpen: $isOpen, items: firms)
@@ -112,8 +116,8 @@ struct LoginPage: View {
 }
 
 func LoginControl(userAnswer: String, passwordAnswer: String) -> Bool {
-    let users: [String] = ["yilmaz", "demo"]
-    let passwords: [String] = ["yilmaz", "demo"]
+    let users: [String] = ["yilmazbey", "demo"]
+    let passwords: [String] = ["yilmazbey", "demo"]
 
     if let userIndex = users.firstIndex(of: userAnswer) {
         if passwordAnswer == passwords[userIndex] {

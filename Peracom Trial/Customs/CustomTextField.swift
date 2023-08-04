@@ -16,7 +16,7 @@ struct CustomTextField: View {
     var body: some View {
         ZStack(alignment: .leading) {
                    RoundedRectangle(cornerRadius: cRadius)
-                       .strokeBorder(Color.black, lineWidth: strokeThickness)
+                .strokeBorder(Color.black .opacity(0.8), lineWidth: strokeThickness)
                        .frame(width: .infinity, height: 45)
 
                    HStack {
@@ -45,8 +45,8 @@ struct CustomSecureField: View {
     var body: some View {
         ZStack(alignment: .leading) {
                    RoundedRectangle(cornerRadius: cRadius)
-                       .strokeBorder(Color.black, lineWidth: strokeThickness)
-                       .frame(width: .infinity, height: 50)
+                .strokeBorder(Color.black.opacity(0.8), lineWidth: strokeThickness)
+                       .frame(width: .infinity, height: 45)
 
                    HStack {
                        Image(systemName: iconName)

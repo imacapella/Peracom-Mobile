@@ -1,7 +1,9 @@
 # Peracom-Mobile
 Peracom Mobile App
 
-<img width="311" alt="image" src="https://github.com/imacapella/Peracom-Mobile/blob/main/assets/101065086/4b1b1d6a-cee2-4cef-97d6-6612370537d8.png">
+<img src="https://github.com/imacapella/Peracom-Mobile/blob/main/assets/101065086/4b1b1d6a-cee2-4cef-97d6-6612370537d8.png" width="48">
+
+<img src="https://github.com/imacapella/Peracom-Mobile/blob/main/assets/101065086/0c5a2db0-6715-4f36-b014-59898673bf49.png" width="48">
 
 <img width="311" alt="image" src="https://github.com/imacapella/Peracom-Mobile/blob/main/assets/101065086/0c5a2db0-6715-4f36-b014-59898673bf49.png">
 
